@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jme/jinput.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme.jar">
+		<attributes>
+			<attribute value="JPentago/lib/jme" name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jme/jme-awt.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-editors.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-effects.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-font.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-gamestates.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-model.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-scene.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-sound.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-terrain.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jmetest.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jmetest-data.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jogg-0.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jorbis-0.0.12.jar"/>
+	<classpathentry kind="lib" path="lib/jme/lwjgl_applet.jar"/>
+	<classpathentry kind="lib" path="lib/jme/lwjgl_fmod3.jar"/>
+	<classpathentry kind="lib" path="lib/jme/lwjgl_test.jar"/>
+	<classpathentry kind="lib" path="lib/jme/lwjgl_util_applet.jar"/>
+	<classpathentry kind="lib" path="lib/jme/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="lib/jme/lwjgl.jar"/>
+	<classpathentry kind="lib" path="lib/jme/native-mac.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
