@@ -1,0 +1,96 @@
+<project name="jpentago" default="build">
+
+
+<property name="targetJar" value="jpentago.jar" />
+
+<property name="src" value="src" />
+<property name="build" value="classes" />
+<property name="dist" value="dist" />
+<property name="bin" value="bin" />
+
+<!-- True by default can be overriden on command line -Ddebug=false -->
+<property name="debug" value="true"/>
+<property name="lib" value="lib"/>
+<property name="jme" value="${lib}/jme"/>
+
+<path id="classpath">
+    <fileset dir="${lib}"
+         includes="**/*.jar" />
+</path>
+
+
+<target name="build" depends="compile, stage-dist, jar">
+</target>
+
+<target name="compile">
+  <javac
+         source="1.5"
+         srcdir="${src}"
+		 includes="**/*.java"
+         destdir="${build}"
+         classpathref="classpath"
+         debug="${debug}"
+         optimize="true"
+  >
+
+  
+  
+  </javac>
+	
+  <!-- include all other resources into the build area,
+	   except *.java files in the future maybe we'll create
+	   a second jpentago-data.jar for just the data files.
+   -->	  
+	<copy todir="${build}">
+		<fileset dir="${src}"
+		    excludes="**/*.java"
+			includes="**"			
+		 />
+	</copy>	  
+  
+</target>
+
+
+
+<!-- We sign the jme jars so that they could be used in a trusted applet -->
+<target name="signjars">
+    <signjar alias="4dttt" storepass="winger1" keystore=".\.keystore">
+        <fileset dir="${dist}/lib" includes="${targetJar} jme*.jar"/>
+    
+    </signjar>
+
+
+</target>
+
+
+<target name="stage-dist">
+	<copy todir="${dist}">
+		<fileset dir="."
+		 includes="${lib}/** ${bin}/**"
+		 />
+	</copy>
+	
+</target>
+
+<target name="jar">
+  <delete>
+    <fileset dir="${dist}" includes="lib/${targetJar}"/>
+  </delete>
+
+  <jar destfile="${dist}/lib/${targetJar}"
+       basedir="${build}"
+       includes="**/*"
+  />
+
+</target>
+
+<target name="clean">
+
+  <delete includeemptydirs="true">
+    <fileset  dir="${build}" includes="**/*"/>
+    <fileset dir="${dist}" includes="**/*"/>
+  </delete>
+
+</target>
+
+</project> 
