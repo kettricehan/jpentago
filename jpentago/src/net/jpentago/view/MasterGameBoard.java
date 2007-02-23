@@ -17,7 +17,7 @@ public class MasterGameBoard extends Node{
     
     public MasterGameBoard() {
         initGameBoards(DEFAULT_GAMEBOARD_ROWS, DEFAULT_GAMEBOARD_COLS);
-        initDebugInfo();
+        //initDebugInfo();
         
     }
     /**

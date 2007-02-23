@@ -62,6 +62,8 @@ import com.jme.math.Ray;
 import com.jme.math.Vector2f;
 import com.jme.math.Vector3f;
 import com.jme.renderer.ColorRGBA;
+import com.jme.scene.Geometry;
+import com.jme.scene.Node;
 import com.jme.scene.SceneElement;
 import com.jme.scene.Skybox;
 import com.jme.scene.Text;
@@ -253,9 +255,14 @@ public class GameBoardView extends SimpleGame {
     protected void simpleUpdate() {
         MouseInput mInput = MouseInput.get();
         
-        if(mInput.isButtonDown(0) && !mouseDown) {
-            mouseDown = true;
-            mousePickUpdate();
+        if(mInput.isButtonDown(0)) {
+            if(!mouseDown) {
+                mouseDown = true;
+                mousePickUpdate();
+            }
+        }
+        else {
+            mouseDown = false;
         }
         
     }
@@ -290,17 +297,22 @@ public class GameBoardView extends SimpleGame {
         StringBuffer pickStatus = new StringBuffer();
         boolean updateRenderStateNeeded = false;
         
-        if (pr.getNumber() >= 1) {
-
-            GeomBatch targetMesh = pr.getPickData(0).getTargetMesh();
-
-            pickStatus.append(targetMesh.getParentGeom().getName() + " : ");
-            
-
-        }
-        for (int i = 1; i < pr.getNumber(); i++) {
+        for (int i = 0; i < pr.getNumber(); i++) {
             GeomBatch targetMesh = pr.getPickData(i).getTargetMesh();
-            pickStatus.append(targetMesh.getParentGeom().getName() + " : ");
+            Geometry parentGeom = targetMesh.getParentGeom();
+            Node parentNode = parentGeom.getParent();
+            
+            //Only include the : to append additional collisions
+            pickStatus.append((i>0 ? " : " : "") + parentNode.getName());
+            //Handle GameCell click
+            if(parentNode instanceof GameCell) {
+                handleGameCellClick((GameCell)parentNode);
+            }
+            //Handle GameBoard click
+            if(parentNode instanceof GameBoard) {
+                handleGameBoardClick((GameBoard)parentNode);
+            }
+
         }
         text.print("MousePick: " + pickStatus);
 
@@ -309,6 +321,17 @@ public class GameBoardView extends SimpleGame {
         }
     }
     
+    private void handleGameBoardClick(GameBoard board2) {
+        // TODO Handle rotation of the GameBoard
+        
+    }
+
+    private void handleGameCellClick(GameCell cell) {
+        // TODO handle clicking of a game cell
+  
+        
+    }
+
     /**
      * @param args
      */

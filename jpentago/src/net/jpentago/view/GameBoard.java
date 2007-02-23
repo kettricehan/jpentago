@@ -66,8 +66,10 @@ public class GameBoard extends Node {
     private void initGameBoard() {
         for(int i=0; i<cellRows; i++) {
             for(int j=0; j<cellCols; j++) {
-                System.out.println("cell("+i+","+j+")");
-                GameCell cell = new GameCell(cellWidth, cellHeight);
+
+                GameCell cell = new GameCell(this, cellWidth, cellHeight);
+                cell.setName("cell("+i+","+j+")");
+                System.out.println(cell.getName());
                 //translate so that cells oriented with center cell is the center of gameboard
                 cell.setLocalTranslation(new Vector3f(i*(cellWidth*cellWidthBuffer), 0f,  j*(cellHeight*cellHeightBuffer)));
                 gameCells.add(cell);
