@@ -3,22 +3,22 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/jme/jinput.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jme.jar">
+	<classpathentry kind="lib" path="lib/jme/jme.jar" sourcepath="lib/jme/src.zip">
 		<attributes>
-			<attribute value="JPentago/lib/jme" name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="JPentago/lib/jme"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/jme/jme-awt.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jme-editors.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jme-effects.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-awt.jar" sourcepath="lib/jme/src.zip"/>
+	<classpathentry kind="lib" path="lib/jme/jme-editors.jar" sourcepath="lib/jme/src.zip"/>
+	<classpathentry kind="lib" path="lib/jme/jme-effects.jar" sourcepath="lib/jme/src.zip"/>
 	<classpathentry kind="lib" path="lib/jme/jme-font.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jme-gamestates.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-gamestates.jar" sourcepath="lib/jme/src.zip"/>
 	<classpathentry kind="lib" path="lib/jme/jme-model.jar"/>
 	<classpathentry kind="lib" path="lib/jme/jme-scene.jar"/>
 	<classpathentry kind="lib" path="lib/jme/jme-sound.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jme-terrain.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jmetest.jar"/>
-	<classpathentry kind="lib" path="lib/jme/jmetest-data.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-terrain.jar" sourcepath="lib/jme/src.zip"/>
+	<classpathentry kind="lib" path="lib/jme/jmetest.jar" sourcepath="lib/jme/src.zip"/>
+	<classpathentry kind="lib" path="lib/jme/jmetest-data.jar" sourcepath="lib/jme/src.zip"/>
 	<classpathentry kind="lib" path="lib/jme/jogg-0.0.5.jar"/>
 	<classpathentry kind="lib" path="lib/jme/jorbis-0.0.12.jar"/>
 	<classpathentry kind="lib" path="lib/jme/lwjgl_applet.jar"/>
@@ -28,5 +28,8 @@
 	<classpathentry kind="lib" path="lib/jme/lwjgl_util.jar"/>
 	<classpathentry kind="lib" path="lib/jme/lwjgl.jar"/>
 	<classpathentry kind="lib" path="lib/jme/native-mac.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-collada.jar" sourcepath="lib/jme/src.zip"/>
+	<classpathentry kind="lib" path="lib/jme/jme-ui.jar" sourcepath="lib/jme/src.zip"/>
+	<classpathentry kind="lib" path="lib/jme/junit-4.1.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

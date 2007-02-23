@@ -26,10 +26,11 @@ public class GameCell extends Node {
     private TextureState cellTexture;
     private TextureState cellTopTexture;
     private AlphaState cellTopAlphaState;
+    private GameBoard parentGameBoard;
     
     private DisplaySystem display = DisplaySystem.getDisplaySystem();
     
-    public GameCell(float cellWidth, float cellHeight) {
+    public GameCell(GameBoard b, float cellWidth, float cellHeight) {
         this.cellWidth=cellWidth;
         this.cellHeight=cellHeight;
         
@@ -39,7 +40,11 @@ public class GameCell extends Node {
     }
 
     public void setName(String cellName) {
+        //Set internal mesh's name
         cell.setName(cellName);
+        
+        //Set node's name
+        super.setName(cellName);
     }
     
     private void initGameCell() {
